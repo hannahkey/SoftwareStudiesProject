@@ -252,6 +252,12 @@ def about():
 
 
 def birth():
+    del inventory[:]
+    del smarts[:]
+    del practical[:]
+    del fear[:]
+    global clockstop
+    clockstop = "no"
     clrscrn()
     try:
         thread.start_new_thread( playsound1, ("Thread-2", 2, ) )
@@ -941,7 +947,7 @@ def sitwithalice3():
             print "\n\tShe smiles. You can't really see it, but you know that she is."
             time.sleep(1)
             print "\n\tYou sit in silence for a while."
-            time.sleep(2)
+            time.sleep(3)
             sitwithalice4()
 def sitwithalice4():
     clrscrn()
@@ -958,52 +964,52 @@ def sitwithalice4():
     time.sleep(1.25)
     print "\n\tAnother smile"
     time.sleep(1)
-    print color.BLUE + "\tThe stars, %s, aren't they beautiful?" % playername + color.END
+    print color.BLUE + "\n\tThe stars, %s, aren't they beautiful?" % playername + color.END
     time.sleep(0.5)
     print "\n"
     next = raw_input("> ").lower()
     checkinput(next)
-    if "yes" in next or "beautiful" in next or "sure" in next or "they are" in next:
+    if "yes" in next or "beautiful" in next or "sure" in next or "they are" in next or "indeed" in next or "agree" in next:
         print "\n"
-        print "How come you didn't notice them before?"
+        print "\tHow come you didn't notice them before?"
         time.sleep(1)
-        print "Before, you thought there was only darkness out here."
+        print "\tBefore, you thought there was only darkness out here."
         time.sleep(1.25)
-        print "\nBut now you see billions of white specks overhead."
+        print "\n\tBut now you see billions of white specks overhead."
         time.sleep(1)
-        print color.CYAN + "\n\nThe stars\n." + color.END
+        print color.CYAN + "\n\n\tThe stars\n." + color.END
         time.sleep(1)
-        print "\nThey seem so calm and constant."
-        print "Yet they are undeniably beautiful."
+        print "\n\tThey seem so calm and constant."
+        print "\tYet they are undeniably beautiful."
         next = raw_input().lower()
         checkinput(next)
         bliss()
     else:
         print "\n"
-        print "Alice turns towards you."
+        print "\tAlice turns towards you."
         time.sleep(1)
-        print color.BLUE + "\nI think there are things you still want to do." + color.END
+        print color.BLUE + "\n\tI think there are things you still want to do." + color.END
         time.sleep(1)
-        print color.BLUE + "Things other than staring at the stars." + color.END
+        print color.BLUE + "\tThings other than staring at the stars." + color.END
         time.sleep(1)
-        print "\nShe is right."
+        print "\n\tShe is right."
         time.sleep(1)
-        print "You get up."
+        print "\tYou get up."
         next = raw_input().lower()
         checkinput(next)
         print "\n"
-        print color.BLUE + "Here. Take this." + color.END
+        print color.BLUE + "\tHere. Take this." + color.END
         time.sleep(1)
-        print "\nShe takes your hand and places something inside of it."
+        print "\n\tShe takes your hand and places something inside of it."
         time.sleep(1)
-        print "Her hands are soft but cold."
+        print "\tHer hands are soft but cold."
         inventory.append("glass shard")
         next = raw_input().lower()
         checkinput(next)
         print "\n"
-        print color.BLUE + "Take care, %s." % playername + color.END
+        print color.BLUE + "\tTake care, %s." % playername + color.END
         time.sleep(1)
-        print color.BLUE + "There is only so much time for each of us."
+        print color.BLUE + "\tThere is only so much time for each of us." + color.END
         #time.sleep(3)
         next = raw_input().lower()
         checkinput(next)
@@ -1024,7 +1030,7 @@ def bliss():
     print "\n\tYou are glad that you stayed."
     time.sleep(2)
     print "\n"
-    print color.BLUE + "\nLet's go." + color.END
+    print color.BLUE + "\n\tLet's go." + color.END
     time.sleep(1.5)
     print "\n\tShe smiles."
     time.sleep(3)
@@ -1059,7 +1065,7 @@ def outside():
 
 def restaurant1():
     global done
-    if done is "no":
+    if done is "on":
         restaurant3()
     clrscrn()
     try:
@@ -1088,7 +1094,7 @@ def restaurant1():
     time.sleep(0.5)
     print "\n\tYou are alone."
     time.sleep(1)
-    done = "no"
+    done = "on"
     restaurant2()
 def restaurant2():
     print """\n
@@ -1216,9 +1222,11 @@ def clock1():
     time.sleep(1)
     print "\n\tUnderneath the face you see three small openings with little gears behind them."
     time.sleep(0.5)
+    print "\n\n"
     print('{:^110}'.format(color.YELLOW + "[-]" + color.END))
     print('{:^110}'.format(color.YELLOW + "[-]" + color.END))
     print('{:^110}'.format(color.YELLOW + "[-]" + color.END))
+    print "\n\n"
     time.sleep(1)
     print "\tYou can turn each of them to display a number between 1 and 9."
     time.sleep(0.5)
@@ -1447,8 +1455,8 @@ def firstclass():
                 if "1" in next or "nice" in next:
                     time.sleep(0.5)
                     print color.CYAN + "\n\tIt's nice to meet you too, John." + color.END
-                    time.sleep(0.5)
-                    print color.CYAN + "\tMy name is %s." %playername + color.END
+                    #time.sleep(0.5)
+                    #print color.CYAN + "\tMy name is %s." %playername + color.END
                     time.sleep(0.5)
                     print color.CYAN + "\n\tIt's good to find another living soul on this train." + color.END
                     time.sleep(1)
@@ -2325,4 +2333,5 @@ def quit():
     clrscrn()
     exit(0)
 
-menu()
+#menu()
+sitwithalice4()
