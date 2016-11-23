@@ -1034,7 +1034,9 @@ def bliss():
     time.sleep(1.5)
     print "\n\tShe smiles."
     time.sleep(3)
+    print "\n\n"
     print('{:^110}'.format(color.BLUE + "CONGRATULATIONS" + color.END))
+    print "\n\n"
     win.append("alice")
     time.sleep(1)
     print "\tPress ENTER to continue"
@@ -2333,5 +2335,4 @@ def quit():
     clrscrn()
     exit(0)
 
-#menu()
-sitwithalice4()
+menu()
