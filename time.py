@@ -256,6 +256,7 @@ def birth():
     del smarts[:]
     del practical[:]
     del fear[:]
+    del code[:]
     global clockstop
     clockstop = "no"
     clrscrn()
@@ -280,6 +281,9 @@ def birth():
     print "\t..."
     time.sleep(2)
     print "\n\tNothing... You don't remember a thing."
+    if "Alice" in win or "John" in win or "Conductor" in win:
+        time.sleep(2)
+        second_class()
     print "\tNot even your name."
     next = raw_input().lower()
     checkinput(next)
